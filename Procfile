@@ -1,1 +1,1 @@
-web: sh setup.sh && python DataTable.py
+web: gunicorn DataTablepip:server
