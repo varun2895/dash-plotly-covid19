@@ -26,7 +26,6 @@ df['Date'] = pd.to_datetime(df['Date']).dt.date
 dff = df[df.groupby('State/UnionTerritory')['Date'].transform('max') == df['Date']]
 dff["id"] = dff["State/UnionTerritory"].apply(lambda x: state_id_map[x])
 dff = dff[['Date','id','State/UnionTerritory','Cured','Deaths','Confirmed']].sort_values('State/UnionTerritory')
-print (dff[:5])
 
 #---------------------------------------------------------------
 app.layout = html.Div([
